@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영양소 계산 앱</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 내비게이션 바 -->
+    <nav>
+        <ul>
+            <li><a href="#foodSearch">음식 검색</a></li>
+            <li><a href="#foodInfo">영양소 정보</a></li>
+            <li><a href="#intakeInfo">섭취한 영양소</a></li>
+            <li><a href="#foodList">섭취한 음식 목록</a></li>
+            <li><a href="#recommendations">조언</a></li>
+        </ul>
+    </nav>
+    
+    <!-- 헤더 -->
+    <header>
+        <h1>영양소 계산기</h1>
+    </header>
+    
+    <!-- 음식 검색 섹션 -->
+    <section id="foodSearch">
+        <h2>음식 검색</h2>
+        <input type="text" id="foodInput" placeholder="음식 이름 입력">
+        <div id="suggestions"></div> <!-- 음식 검색 시 추천 리스트가 표시될 영역 -->
+    </section>
+    
+    <!-- 영양소 정보 섹션 -->
+    <section id="foodInfo">
+        <h2>영양소 정보</h2>
+        <p id="calories">칼로리: </p> <!-- 선택된 음식의 칼로리를 표시 -->
+        <p id="macros">탄단지 분배: </p> <!-- 선택된 음식의 탄수화물, 단백질, 지방 정보를 표시 -->
+        <p id="sugar">당: </p> <!-- 선택된 음식의 당 정보를 표시 -->
+        <p id="minerals">무기질: </p> <!-- 선택된 음식의 무기질 정보를 표시 -->
+        <button id="consumeButton" disabled>이 음식 섭취함</button> <!-- 음식 섭취 버튼, 음식이 선택되면 활성화됨 -->
+    </section>
+    
+    <!-- 섭취한 영양소 정보 섹션 -->
+    <section id="intakeInfo">
+        <h2>섭취한 영양소</h2>
+        <p id="intakeCalories">칼로리: </p> 
+        <p id="intakeMacros">탄단지 분배: </p>
+        <p id="intakeSugar">당: </p> 
+        <p id="intakeMinerals">무기질: </p>
+        <p id="carbRatio">탄수화물 비율: </p> 
+        <p id="proteinRatio">단백질 비율: </p>
+        <p id="fatRatio">지방 비율: </p> 
+        <p id="intakeWarning"></p> 
+    </section>
+
+    <!-- 섭취한 음식 목록 섹션 -->
+    <section id="foodList">
+        <h2>섭취한 음식 목록</h2>
+        <ul id="consumedFoodList"></ul> <!-- 섭취한 음식 목록 표시 -->
+    </section>
+
+    <!-- 조언 섹션 -->
+    <section id="recommendations">
+        <h2>조언</h2>
+        <p id="recommendationText"></p> <!-- 영양소 균형을 맞추기 위해 음식 추천을 표시 -->
+    </section>
+
+    <!-- 외부 라이브러리 및 스크립트 파일 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script> <!-- XLSX 라이브러리 -->
+    <script src="script.js"></script>
+</body>
+</html>
